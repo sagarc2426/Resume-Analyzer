@@ -1,0 +1,1 @@
+We are looking for a software engineer skilled in Python, Flask, SQL, JavaScript, and version control systems like Git. Experience with APIs and problem-solving is preferred.
