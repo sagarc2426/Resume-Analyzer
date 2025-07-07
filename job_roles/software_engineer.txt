@@ -1,1 +1,17 @@
-We are looking for a software engineer skilled in Python, Flask, SQL, JavaScript, and version control systems like Git. Experience with APIs and problem-solving is preferred.
+We are looking for a Software Engineer who is passionate about building high-quality web applications.
+
+Responsibilities:
+- Design and build RESTful APIs using Python and Flask
+- Work with SQL databases and version control systems like Git
+- Collaborate with frontend developers (JavaScript, React)
+- Ensure code quality and scalability
+
+Requirements:
+- Strong knowledge of Python and Flask
+- Familiarity with SQL and relational databases
+- Experience with Git and API development
+- Good understanding of JavaScript
+
+Nice to have:
+- Exposure to cloud platforms (AWS, Azure)
+- Understanding of CI/CD pipelines

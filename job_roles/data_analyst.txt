@@ -1,1 +1,13 @@
-We require a data analyst with experience in Excel, SQL, Python, data visualization tools like Power BI or Tableau, and statistical analysis.
+We are hiring a Data Analyst to join our analytics team.
+
+Responsibilities:
+- Clean, analyze, and visualize data from multiple sources
+- Generate dashboards and reports using Excel and Tableau
+- Write SQL queries to extract insights
+- Collaborate with cross-functional teams
+
+Requirements:
+- Strong knowledge of SQL and Excel
+- Familiarity with Tableau or Power BI
+- Basic understanding of statistics and data analysis
+- Python knowledge is a plus

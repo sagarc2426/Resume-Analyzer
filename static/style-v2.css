@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #dbeafe, #f0f9ff);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 60px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 30px;
+    color: #1f2937;
+    letter-spacing: 1px;
+}
+
+label {
+    display: block;
+    margin: 20px 0 8px;
+    font-weight: 600;
+    color: #374151;
+}
+
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    font-size: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #f9fafb;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(to right, #2563eb, #1e3a8a);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #1e40af, #1e3a8a);
+}
+
+.result-box {
+    margin-top: 35px;
+    padding: 20px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f1f5f9;
+    border-left: 5px solid #38bdf8;
+    color: #1e293b;
+}
+
+.result-box.success {
+    border-left-color: #10b981;
+    color: #065f46;
+    background: #ecfdf5;
+}
+
+.result-box.error {
+    border-left-color: #ef4444;
+    color: #7f1d1d;
+    background: #fef2f2;
+}
+
+.result-box.skills {
+    border-left-color: #6366f1;
+    background: #eef2ff;
+}
+
+.result-box p {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.result-box p i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.result-box p:first-child {
+    font-weight: 600;
+    font-size: 17px;
+}

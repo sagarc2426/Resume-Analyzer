@@ -1,31 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Resume Analyzer</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-v2.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>AI Resume Analyzer</h1>
+
         <form method="POST" enctype="multipart/form-data">
             <label for="role">Select Job Role:</label>
             <select name="role" id="role" required>
-                <option value="" disabled selected>Select a role</option>
+                <option value="" disabled>Select a role</option>
                 {% for role in roles %}
-                <option value="{{ role }}">{{ role }}</option>
+                <option value="{{ role }}" {% if role == selected_role %}selected{% endif %}>{{ role }}</option>
                 {% endfor %}
             </select>
 
-            <label for="resume">Upload Your Resume (PDF):</label>
-            <input type="file" name="resume" accept=".pdf" required>
+            <label for="experience">Select Experience Level:</label>
+            <select name="experience" id="experience" required>
+                <option value="" disabled>Select experience</option>
+                <option value="Fresher" {% if selected_exp == 'Fresher' %}selected{% endif %}>Fresher</option>
+                <option value="Intermediate" {% if selected_exp == 'Intermediate' %}selected{% endif %}>Intermediate</option>
+                <option value="Senior" {% if selected_exp == 'Senior' %}selected{% endif %}>Senior</option>
+            </select>
 
-            <button type="submit">Check Match</button>
+            <label for="job_type">Select Job Type:</label>
+            <select name="job_type" id="job_type" required>
+                <option value="" disabled>Select job type</option>
+                <option value="Full-Time" {% if selected_type == 'Full-Time' %}selected{% endif %}>Full-Time</option>
+                <option value="Part-Time" {% if selected_type == 'Part-Time' %}selected{% endif %}>Part-Time</option>
+                <option value="Internship" {% if selected_type == 'Internship' %}selected{% endif %}>Internship</option>
+            </select>
+
+            <label for="resume">Upload Your Resume (PDF):</label>
+            <input type="file" name="resume" id="resume" accept=".pdf" required>
+
+            <button type="submit"><i class="fas fa-check-circle"></i> Check Match</button>
         </form>
 
         {% if result %}
-        <div class="result-box">
-            <p>{{ result }}</p>
+        <div class="result-box {% if 'Yes' in result %}success{% else %}error{% endif %}">
+            <p><i class="fas {% if 'Yes' in result %}fa-check-circle{% else %}fa-times-circle{% endif %}"></i> {{ result }}</p>
         </div>
+
+        {% if matched_skills %}
+        <div class="result-box skills">
+            <p><i class="fas fa-lightbulb"></i> <strong>Matched Skills:</strong> {{ matched_skills | join(', ') }}</p>
+            <p><i class="fas fa-times-circle" style="color: #ef4444;"></i> <strong>Missing Skills:</strong> {{ missing_skills | join(', ') }}</p>
+        </div>
+        {% endif %}
         {% endif %}
     </div>
 </body>
