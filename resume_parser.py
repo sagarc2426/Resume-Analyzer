@@ -1,6 +1,8 @@
 import re
 import spacy
 from pdfminer.high_level import extract_text
+import spacy.cli
+spacy.cli.download("en_core_web_md")  # <-- This will ensure Render downloads it
 
 nlp = spacy.load("en_core_web_md")
 
